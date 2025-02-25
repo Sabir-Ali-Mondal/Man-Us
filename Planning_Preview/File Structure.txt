@@ -3,12 +3,10 @@ full_stack_religious_app/
 │   ├── css/
 │   │   └── style.css
 │   ├── js/
-│   │   ├── script.js
-│   │   ├── doubts.js
-│   │   └── verify.js
-│   ├── images/
+│   │    └──script.js
 │   ├── index.html
 │   ├── doubts.html
+|   |-- story.html
 │   └── verify.html
 ├── views/
 │   ├── layout.ejs
@@ -16,24 +14,13 @@ full_stack_religious_app/
 │   ├── doubts.ejs
 │   └── verify.ejs
 ├── server/
-│   ├── routes/
-│   │   ├── doubtsRoutes.js
-│   │   └── verificationRoutes.js
-│   ├── controllers/
-│   │   ├── doubtsController.js
-│   │   └── verificationController.js
-│   ├── models/
-│   │   ├── db.js
-│   │   ├── doubtsModel.js
-│   │   └── verificationModel.js
-│   ├── middleware/
-│   │   └── errorHandler.js
 │   └── server.js
 ├── database/
-│   └── migrations.sql
+│   └── Genereted Content.sql
+|    └── User Login and Info .sql
 ├── ai/
-│   └── ai_storytelling.py
-├── prompts/         # Store AI-generated prompts here
-├── .env             # Environment variables (API keys, DB path, etc.)
-├── vercel.json      # Vercel deployment configuration
+│   └── AI-API.py
+|        {story,doubts,verification,fourfriends}
+├── .env            
+├── vercel.json      
 └── README.md        # Project documentation and setup instructions
