@@ -1,26 +1,15 @@
 full_stack_religious_app/
 ├── public/
-│   ├── css/
-│   │   └── style.css
-│   ├── js/
-│   │    └──script.js
+│   ├── css/style.css
+│   ├── js/script.js
 │   ├── index.html
-│   ├── doubts.html
-|   |-- story.html
-│   └── verify.html
 ├── views/
 │   ├── layout.ejs
 │   ├── home.ejs
-│   ├── doubts.ejs
-│   └── verify.ejs
-├── server/
-│   └── server.js
 ├── database/
-│   └── Genereted Content.sql
-|    └── User Login and Info .sql
-├── ai/
-│   └── AI-API.py
-|        {story,doubts,verification,fourfriends}
-├── .env            
-├── vercel.json      
-└── README.md        # Project documentation and setup instructions
+│   ├── content.sql
+│   ├── users.sql
+├── server.js
+├── .env
+├── vercel.json
+└── README.md
