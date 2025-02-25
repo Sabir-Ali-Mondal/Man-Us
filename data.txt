@@ -1,0 +1,22 @@
+### **Concise Research for Religious Discussion Web App**  
+
+#### **1. Core Religious Texts (Primary Scriptures)**  
+- **Islam**: Quran (114 Surahs, 6,236 Ayats, 30 Paras)  
+- **Hinduism**: Bhagavad Gita (18 Chapters, 700 Verses), Vedas, Upanishads  
+- **Christianity**: Bible (Old & New Testament, 66 Books, ~31,102 Verses)  
+- **Buddhism**: Tripitaka (Vinaya, Sutta, Abhidhamma)  
+
+#### **2. Storytelling Sources (Moral & Cultural Teachings)**  
+- **Islam**: Hadith (Sahih Bukhari, Sahih Muslim), Tafsir books  
+- **Hinduism**: Ramayana, Mahabharata, Puranas  
+- **Christianity**: Jesus' Parables, Apocrypha  
+- **Buddhism**: Jataka Tales, Dhammapada  
+
+#### **3. Verification & Misinformation Checking**  
+- **Islam**: [IslamQA](https://islamqa.info/en), [Al-Islam](https://www.al-islam.org/)  
+- **Hinduism**: [Vedanta Society](https://vedanta.org/), [Swami Vivekananda Archive](https://vivekananda.org/)  
+- **Christianity**: [BibleGateway](https://www.biblegateway.com/), [GotQuestions](https://www.gotquestions.org/)  
+- **Buddhism**: [SuttaCentral](https://suttacentral.net/), [Buddhist Digital Resource Center](https://www.bdrc.io/)  
+
+#### **4. AI Integration for Features**  
+- **Text Retrieval**: APIs for Quran, Bible, Gita, Tripitaka  
