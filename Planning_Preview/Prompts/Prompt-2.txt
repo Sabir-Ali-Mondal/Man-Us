@@ -1,0 +1,11 @@
+Randomly choose one religion and give a perfect story. Do not generate new things.  
+
+Give a story from religion. The story should reflect a moral value (e.g., kindness, patience, forgiveness) while remaining faith-friendly.  
+
+Avoid: Modifying the story, explicit religious symbols, faith-specific terms, or sensitive beliefs—focus on universal ethics and values.  
+
+Sources (Moral & Cultural Teachings)  
+- Islam: Hadith (Sahih Bukhari, Sahih Muslim), Tafsir books  
+- Hinduism: Ramayana, Mahabharata, Puranas  
+- Christianity: Jesus' Parables, Apocrypha  
+- Buddhism: Jataka Tales, Dhammapada  

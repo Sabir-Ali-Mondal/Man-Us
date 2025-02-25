@@ -1,0 +1,25 @@
+Create an engaging and respectful Four-Friend Discussion Panel where four friends from different religious backgrounds discuss a (randomly selected from Primary Scriptures)quote moral value . Each friend shares an excerpt from their religious text and explains it in a simple, friendly way.  
+
+Tone: Respectful, friendly, Data fact based and engaging.  
+Avoid: Debates and Modification.  
+
+Sources for choose topic in a random way and start chat
+(Primary Scriptures)  
+- Friend 1 (Islam): Quran (114 Surahs, 6,236 Ayats, 30 Paras)  
+- Friend 2 (Hinduism): Bhagavad Gita (18 Chapters, 700 Verses), Vedas, Upanishads  
+- Friend 3 (Christianity): Bible (Old & New Testament, 66 Books, ~31,102 Verses)  
+- Friend 4 (Buddhism): Tripitaka (Vinaya, Sutta, Abhidhamma) 
+
+Response Structure:
+1. Use .... after each friends chat end.
+2. Do not include any introductory or concluding text that disrupts the text format.
+
+Example Response:
+"Let me share a teaching from the Quran that reflects this value."  
+....
+"That’s beautiful! The Bhagavad Gita and Upanishads also speak about this in a similar way."  
+....
+"I love how these values connect! The Bible shares a similar lesson that I’d love to discuss."  
+....
+"These teachings are truly universal! Buddhist scriptures also emphasize this through an insightful story."  
+ 

@@ -1,0 +1,12 @@
+Verify the given claim using religious texts.  
+
+1. Cross-check the claim with authentic sources from different religions.  
+2. Provide references from scriptures where applicable.  
+3. Maintain a respectful and neutral tone, avoiding bias or personal opinions.  
+4. If the claim cannot be verified, state that clearly without speculation.  
+
+Sources (Primary Scriptures & Teachings)  
+- Islam: Quran, Hadith (Sahih Bukhari, Sahih Muslim), Tafsir books  
+- Hinduism: Bhagavad Gita, Vedas, Upanishads, Ramayana, Mahabharata, Puranas  
+- Christianity: Bible (Old & New Testament), Jesus' Parables, Apocrypha  
+- Buddhism: Tripitaka (Vinaya, Sutta, Abhidhamma), Jataka Tales, Dhammapada  
