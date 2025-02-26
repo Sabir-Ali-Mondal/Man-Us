@@ -124,3 +124,113 @@ Easy toggling between English and Bengali, with localization for other languages
 
 Analytics Dashboard:
 For admins to monitor user engagement and content accuracy.
+
+
+
+
+
+
+1. Overall Layout
+Brand Bar (Footer)
+
+Positioned at the bottom of the screen.
+Displays "ManUS" prominently.
+Includes a subtle animation of leaves moving horizontally (CSS-based).
+Keep it minimal and clean to avoid distracting from the main content.
+Floating Menu Trigger (Avatar/Icon)
+
+Positioned in the bottom-right (or bottom-left) corner, near the brand bar.
+This could be:
+A user avatar (small circular image).
+Or a button/icon that aligns with your brand style.
+Floating Menu (Dropdown)
+
+Appears when the user clicks/taps the avatar/icon.
+Vertical list of menu items, each with:
+Icon (to the left).
+Label (e.g., “Profile,” “Settings,” “About,” etc.).
+Styled with a white background, subtle box shadow, and rounded corners for a modern look.
+Transitions/animations:
+Smooth fade or slide-in effect when opened.
+Close when user clicks outside or selects an option.
+2. Menu Items & Navigation
+Based on your requirements, here are recommended menu items:
+
+Profile
+
+Leads to the Profile page/section.
+(Icon example: a user silhouette)
+Settings
+
+Leads to the Settings page/section.
+(Icon example: a gear or cog)
+About
+
+Leads to the About page/section.
+(Icon example: an info or question mark icon)
+Other Custom Items (Optional)
+
+Could include items like “Contact Us,” “Help,” “Logout,” etc.
+
+Profile Section
+Profile Picture
+
+A circular display of the user’s photo.
+Include an upload/edit icon for changing the picture.
+Name (Editable)
+
+Display the user’s name.
+Provide a simple edit field (inline edit or separate input).
+Religion (Non-editable or editable, based on your preference)
+
+If editable, ensure a dropdown or text field is available.
+Email
+
+Display current email.
+Offer an edit option or instructions on how to update.
+Password
+
+Display a “Change Password” button or link, leading to a secure password update form.
+Overall, the Profile Section should be clean, card-based or in a vertical form layout for clarity.
+
+4. About Section
+Purpose of the Website
+
+A short description or mission statement.
+Possibly use an informational card with an icon or illustration.
+Plan
+
+Outline any goals or roadmap for the platform.
+Could be presented in a timeline or bullet list.
+Team Details
+
+Introduce key members or a short note about who is behind “ManUS.”
+Include headshots or small avatars if desired.
+Ensure the About section has a visually appealing layout with consistent styling.
+
+5. Settings Section
+Placeholder Content
+
+Currently just a heading (“Settings”).
+
+Consistent UI/UX: Minimal, clean design; cohesive color scheme; easy navigation; responsive layout.
+User Flow Summary
+Landing on ManUS:
+
+See the brand bar at the bottom with the animated leaves and “ManUS” label.
+Possibly see some main content or homepage.
+Access Menu:
+
+Click/tap the avatar or icon in the bottom corner → the floating menu slides/fades in.
+Choose an option: Profile, Settings, or About.
+Navigating to Profile:
+
+See the profile picture, name, religion, email, and password fields.
+Option to edit or upload a new profile picture.
+Navigating to About:
+
+View purpose, plan, and team details.
+Navigating to Settings:
+
+Currently just shows a “Settings” heading (placeholder for future options).
+
