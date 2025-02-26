@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ManUS - A Truth Platform</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="none,noarchive">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+        :root {
+            --primary-color: #A8E6CE;
+            --secondary-color: #4D8F77;
+            --accent-color: #76C7C0;
+            --background-color: #a8d9a5;
+            --text-color: #002e0d;
+        }
+
+        body {
+            background-color: var(--background-color);
+            font-family: 'serif';
+            color: var(--text-color);
+        }
+
+        section {
+            margin-bottom: calc(50% + 100px);
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            background-color: var(--primary-color);
+            border-radius: 0 25px 0px 20px;
+            padding: 20px;
+            height: 100%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-link {
+            font-size: 18px;
+            color: var(--text-color);
+            padding: 10px 15px;
+            border-left: 5px solid var(--secondary-color);
+            /* Left green border */
+            border-bottom: 1px solid var(--secondary-color);
+            /* Bottom green border */
+            display: flex;
+            align-items: center;
+            white-space: nowrap;
+            gap: 8px;
+            /* Space between icon and text */
+            border-radius: 5px 30px 0px 30px;
+            margin: 5px;
+            text-decoration: none;
+            width: 90%;
+            /* Set width to 90% */
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            background-color: var(--secondary-color);
+            color: white;
+            border-left: 5px solid var(--accent-color);
+        }
+
+        /* Content Section Styles */
+        .content-section {
+            padding: 20px;
+            border-radius: 15px;
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        .ai-response {
+            padding: 15px;
+            border-left: 5px solid var(--accent-color);
+            font-size: 16px;
+            color: var(--text-color);
+            background: #f9f9f9;
+            border-radius: 8px;
+            min-height: 50px;
+        }
+
+        /* Input and Button Styling */
+        .form-control {
+            margin-bottom: 10px;
+        }
+
+        .btn {
+            margin-top: 10px;
+        }
+
+        /* Loader Styles */
+        .loader-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 50px;
+        }
+
+        .loader {
+            --w: 10ch;
+            font-weight: bold;
+            font-family: monospace;
+            font-size: 30px;
+            letter-spacing: var(--w);
+            width: var(--w);
+            overflow: hidden;
+            white-space: nowrap;
+            color: #0000;
+            animation: l40 2s infinite;
+        }
+
+        .loader:before {
+            content: "Loading...";
+        }
+
+        @keyframes l40 {
+
+            0%,
+            100% {
+                text-shadow:
+                    calc(0*var(--w)) 0 #000, calc(-1*var(--w)) 0 #000, calc(-2*var(--w)) 0 #000, calc(-3*var(--w)) 0 #000, calc(-4*var(--w)) 0 #000,
+                    calc(-5*var(--w)) 0 #000, calc(-6*var(--w)) 0 #000, calc(-7*var(--w)) 0 #000, calc(-8*var(--w)) 0 #000, calc(-9*var(--w)) 0 #000;
+            }
+
+            9% {
+                text-shadow:
+                    calc(0*var(--w)) 0 #000, calc(-1*var(--w)) 0 #000, calc(-2*var(--w)) -20px #0000, calc(-3*var(--w)) 0 #000, calc(-4*var(--w)) 0 #000,
+                    calc(-5*var(--w)) 0 #000, calc(-6*var(--w)) -20px #0000, calc(-7*var(--w)) 0 #000, calc(-8*var(--w)) 0 #000, calc(-9*var(--w)) 0 #000;
+            }
+
+            18% {
+                text-shadow:
+                    calc(0*var(--w)) 0 #000, calc(-1*var(--w)) 0 #000, calc(-2*var(--w)) -20px #0000, calc(-3*var(--w)) 0 #000, calc(-4*var(--w)) 0 #000,
+                    calc(-5*var(--w)) 0 #000, calc(-6*var(--w)) -20px #0000, calc(-7*var(--w)) 0 #000, calc(-8*var(--w)) 0 #000, calc(-9*var(--w)) 0 #000;
+            }
+
+            27% {
+                text-shadow:
+                    calc(0*var(--w)) -20px #0000, calc(-1*var(--w)) 0 #000, calc(-2*var(--w)) -20px #0000, calc(-3*var(--w)) 0 #000, calc(-4*var(--w)) 0 #000,
+                    calc(-5*var(--w)) 0 #000, calc(-6*var(--w)) -20px #0000, calc(-7*var(--w)) 0 #000, calc(-8*var(--w)) 0 #000, calc(-9*var(--w)) 0 #000;
+            }
+
+            36% {
+                text-shadow:
+                    calc(0*var(--w)) -20px #0000, calc(-1*var(--w)) 0 #000, calc(-2*var(--w)) -20px #0000, calc(-3*var(--w)) 0 #000, calc(-4*var(--w)) 0 #000,
+                    calc(-5*var(--w)) -20px #0000, calc(-6*var(--w)) -20px #0000, calc(-7*var(--w)) 0 #000, calc(-8*var(--w)) 0 #000, calc(-9*var(--w)) 0 #000;
+            }
+
+            45% {
+                text-shadow:
+                    calc(0*var(--w)) -20px #0000, calc(-1*var(--w)) 0 #000, calc(-2*var(--w)) -20px #0000, calc(-3*var(--w)) 0 #000, calc(-4*var(--w)) 0 #000,
+                    calc(-5*var(--w)) -20px #0000, calc(-6*var(--w)) -20px #0000, calc(-7*var(--w)) 0 #000, calc(-8*var(--w)) -20px #0000, calc(-9*var(--w)) 0 #000;
+            }
+
+            54% {
+                text-shadow:
+                    calc(0*var(--w)) -20px #0000, calc(-1*var(--w)) 0 #000, calc(-2*var(--w)) -20px #0000, calc(-3*var(--w)) 0 #000, calc(-4*var(--w)) -20px #0000,
+                    calc(-5*var(--w)) -20px #0000, calc(-6*var(--w)) -20px #0000, calc(-7*var(--w)) 0 #000, calc(-8*var(--w)) -20px #0000, calc(-9*var(--w)) 0 #000;
+            }
+
+            63% {
+                text-shadow:
+                    calc(0*var(--w)) -20px #0000, calc(-1*var(--w)) 0 #000, calc(-2*var(--w)) -20px #0000, calc(-3*var(--w)) 0 #000, calc(-4*var(--w)) -20px #0000,
+                    calc(-5*var(--w)) -20px #0000, calc(-6*var(--w)) -20px #0000, calc(-7*var(--w)) 0 #000, calc(-8*var(--w)) -20px #0000, calc(-9*var(--w)) -20px #0000;
+            }
+
+            72% {
+                text-shadow:
+                    calc(0*var(--w)) -20px #0000, calc(-1*var(--w)) -20px #0000, calc(-2*var(--w)) -20px #0000, calc(-3*var(--w)) 0 #000, calc(-4*var(--w)) -20px #0000,
+                    calc(-5*var(--w)) -20px #0000, calc(-6*var(--w)) -20px #0000, calc(-7*var(--w)) 0 #000, calc(-8*var(--w)) -20px #0000, calc(-9*var(--w)) -20px #0000;
+            }
+
+            81% {
+                text-shadow:
+                    calc(0*var(--w)) -20px #0000, calc(-1*var(--w)) -20px #0000, calc(-2*var(--w)) -20px #0000, calc(-3*var(--w)) 0 #000, calc(-4*var(--w)) -20px #0000,
+                    calc(-5*var(--w)) -20px #0000, calc(-6*var(--w)) -20px #0000, calc(-7*var(--w)) -20px #0000, calc(-8*var(--w)) -20px #0000, calc(-9*var(--w)) -20px #0000;
+            }
+
+            90% {
+                text-shadow:
+                    calc(0*var(--w)) -20px #0000, calc(-1*var(--w)) -20px #0000, calc(-2*var(--w)) -20px #0000, calc(-3*var(--w)) -20px #0000, calc(-4*var(--w)) -20px #0000,
+                    calc(-5*var(--w)) -20px #0000, calc(-6*var(--w)) -20px #0000, calc(-7*var(--w)) -20px #0000, calc(-8*var(--w)) -20px #0000, calc(-9*var(--w)) -20px #0000;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                position: static;
+                height: auto;
+                border-radius: 0;
+                margin-bottom: 20px;
+            }
+
+            .nav-link {
+                font-size: 16px;
+            }
+
+            .content-section {
+                padding: 15px;
+            }
+        }
+
+        /* Brand Bar Styles */
+        .brand-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(232, 246, 243, 0.8);
+            color: var(--secondary-color);
+            text-align: center;
+            padding: 10px;
+            font-size: 1.2em;
+            z-index: 100;
+            font-family: 'Lobster Two', cursive;
+        }
+
+        .brand-bar-name {
+            font-size: 1.5em;
+            animation: shake-left 0.7s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+        }
+
+        @keyframes shake-left {
+
+            0%,
+            100% {
+                transform: rotate(0deg);
+                transform-origin: 0 50%;
+            }
+
+            10% {
+                transform: rotate(2deg);
+            }
+
+            20%,
+            40%,
+            60% {
+                transform: rotate(-4deg);
+            }
+
+            30%,
+            50%,
+            70% {
+                transform: rotate(4deg);
+            }
+
+            80% {
+                transform: rotate(-2deg);
+            }
+
+            90% {
+                transform: rotate(2deg);
+            }
+        }
+
+
+        /* Floating Menu Styles */
+        .floating-menu-trigger {
+            position: fixed;
+            bottom: 10px;
+            right: 30px;
+            z-index: 101;
+            /* Above brand bar */
+            cursor: pointer;
+        }
+
+        .floating-menu {
+            position: fixed;
+            bottom: 60px;
+            /* Positioned above the trigger */
+            right: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            padding: 10px 0;
+            display: none;
+            /* Hidden by default */
+            z-index: 102;
+            width: 180px;
+            /* Adjust as needed */
+        }
+
+        .floating-menu.show {
+            display: block;
+        }
+
+        .floating-menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .floating-menu li {
+            padding: 8px 15px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            color: var(--text-color);
+            text-decoration: none;
+            /* Remove underlines from links in the menu*/
+        }
+
+        .floating-menu li:hover {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .floating-menu li i {
+            margin-right: 8px;
+            /* Space between icon and text */
+            color: var(--secondary-color);
+        }
+
+        /* User Profile Section Styles */
+        #profile .profile-picture {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        #profile .profile-field {
+            margin-bottom: 10px;
+        }
+
+        .leaf {
+            position: absolute;
+            top: 5px;
+            width: 20px;
+            /* Adjust size as needed */
+            height: 20px;
+            /* Adjust size as needed */
+            background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"%3E%3Cpath fill="%234D8F77" d="M18.12 6.88a8.47 8.47 0 0 0-5.99-2.59c-.39 0-.77.04-1.15.12A11.1 11.1 0 0 0 2.88 17.12c-.21.38-.38.79-.5 1.21a1.82 1.82 0 0 0 .5 1.71 1.61 1.61 0 0 0 2.08-.12 10.46 10.46 0 0 1 7.24-4.26c.39 0 .77-.04 1.15-.12A11.1 11.1 0 0 1 21.12 6.88c.21-.38.38-.79.5-1.21a1.82 1.82 0 0 0-.5-1.71 1.61 1.61 0 0 0-2.08.12z"/%3E%3C/svg%3E');
+            background-size: contain;
+            opacity: 0.5;
+            animation: leafAnimation 20s linear infinite;
+        }
+
+        .leaf:nth-child(even) {
+            top: 25px;
+            animation-delay: 5s;
+        }
+
+        @keyframes leafAnimation {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(70vw);
+            }
+        }
+
+        /* General styling for all content sections */
+        .content-section {
+            display: none;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+            margin: 20px auto;
+            line-height: 1.7;
+        }
+
+        /* Specific styling for the About section */
+        .about-section {
+            border-left: 5px solid var(--secondary-color);
+            /* Adds a colored left border */
+            padding-left: 20px;
+        }
+
+        .about-section h2,
+        .about-section h3 {
+            color: var(--secondary-color);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+
+        .about-section p {
+            font-size: 16px;
+            color: var(--light-text-color);
+            text-align: justify;
+        }
+
+        .about-section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .about-section ul li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .about-section ul li::before {
+            content: "✔️";
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+            font-size: 18px;
+        }
+
+        .about-section strong {
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
+
+        .about-section i {
+            display: block;
+            text-align: center;
+            font-size: 18px;
+            margin-top: 20px;
+            font-style: italic;
+            color: var(--light-text-color);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar Navigation -->
+            <nav class="col-md-3 col-lg-2 d-md-block sidebar" aria-label="Main Navigation">
+                <div class="position-sticky">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#" onclick="showSection('discussion')" aria-current="page">
+                                <i class="fas fa-users"></i> Four-Friend
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" onclick="showSection('doubt')">
+                                <i class="fas fa-question-circle"></i> Doubt
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" onclick="showSection('verify')">
+                                <i class="fas fa-check-circle"></i> Verify
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" onclick="showSection('story')">
+                                <i class="fas fa-book"></i> Storytelling
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Main Content -->
+            <main class="col-md-9 col-lg-10">
+                <!-- Four-Friend Discussion -->
+                <section id="discussion" class="content-section">
+                    <h2>Four-Friend Discussion</h2>
+                    <div id="discussion-content" class="ai-response">
+                        <div class="loader-container">
+                            <div class="loader"></div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary mt-3" onclick="fetchDiscussion()">Next Discussion</button>
+                </section>
+
+                <!-- Doubt Section -->
+                <section id="doubt" class="content-section" style="display: none;">
+                    <h2>Ask a Doubt ❓</h2>
+                    <input type="text" id="doubtInput" class="form-control" placeholder="Enter your religious doubt..." aria-label="Religious doubt">
+                    <button class="btn btn-success mt-2" onclick="askDoubt()">Ask</button>
+                    <div id="doubt-content" class="ai-response mt-3"></div>
+                </section>
+
+                <!-- Verify Section -->
+                <section id="verify" class="content-section" style="display: none;">
+                    <h2>Verify a Claim</h2>
+                    <input type="text" id="verifyInput" class="form-control" placeholder="Enter a religious claim..." aria-label="Religious claim">
+                    <button class="btn btn-warning mt-2" onclick="verifyClaim()">Verify</button>
+                    <div id="verify-content" class="ai-response mt-3"></div>
+                </section>
+
+                <!-- AI Storytelling -->
+                <section id="story" class="content-section" style="display: none;">
+                    <h2>AI Storytelling</h2>
+                    <button class="btn btn-info mt-2" onclick="generateStory()">Generate Story</button>
+                    <div id="story-content" class="ai-response mt-3"></div>
+                </section>
+
+                <!-- Profile Section -->
+                <section id="profile" class="content-section" style="display: none;">
+                    <h2>Profile</h2>
+                    <div class="text-center">
+                        <img src="https://png.pngtree.com/png-vector/20231202/ourmid/pngtree-customer-icon-isolated-personality-png-image_10852443.png" alt="Profile Picture" class="profile-picture">
+                    </div>
+                    <div class="profile-field">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" class="form-control" value="John Doe">
+                    </div>
+
+                    <div class="profile-field">
+                        <label for="religion">Religion:</label>
+                        <select id="religion" class="form-control">
+                            <option>Islam</option>
+                            <option>Christianity</option>
+                            <option>Hinduism</option>
+                            <option>Buddhism</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+
+                    <div class="profile-field">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" class="form-control" value="john.doe@example.com" disabled>
+                    </div>
+
+                    <div>
+                        <button class="btn btn-secondary">Change Password</button>
+                        <button class="btn btn-primary">Save Changes</button>
+                    </div>
+                </section>
+
+                <!-- About Section -->
+                <section id="about" class="content-section about-section" style="display: none;">
+                    <h2>About ManUS</h2>
+                    <p>Welcome to ManUS, a platform dedicated to exploring and discussing religious topics with the help of AI.
+                        Our mission is to promote understanding and respect among different faiths by providing a safe space for religious discussions and offering AI-powered tools for doubt clarification and claim verification.
+                        We believe that fostering knowledge and open dialogue can reduce misinformation and build stronger bonds between humanity.
+                    </p>
+                    <h3>Our Objectives</h3>
+                    <ul>
+                        <li>Spread respect, helping behavior, morality, self-control, and love for all.</li>
+                        <li>Foster respect and bonds between humans by providing knowledge about their confusions and misunderstandings.</li>
+                        <li>Reduce hatred.</li>
+                    </ul>
+                    <h3>Our Strategy</h3>
+                    <p>ManUS uses a web app approach that runs with predefined prompts, automatically customizing them randomly over religious books chapters.
+                        It then provides moral values using Artificial Intelligence and shows related teachings in other religious books every day.
+                    </p>
+                    <h3>Target Audience</h3>
+                    <p>Our target audience includes:</p>
+                    <ul>
+                        <li>Any curious people.</li>
+                        <li>Religious peace thinkers.</li>
+                        <li>Individuals from regions like India and Bangladesh.</li>
+                    </ul>
+                    <h3>Our Plan</h3>
+                    <ul>
+                        <li><strong>Home (Four-Friend Discussion Panel):</strong>
+                            <ul>
+                                <li>A religious text excerpt is randomly selected, and its moral value is discussed.</li>
+                                <li>Three other "friends" from different religions provide matching references from their respective texts.</li>
+                                <li>Users can receive a new teaching daily or manually select discussions as much as they want.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Doubts Section:</strong>
+                            <ul>
+                                <li>Users can ask religious doubts to be solved by modern religious scholars (AI-assisted).</li>
+                                <li>Unlike a simple web search, AI will generate responses using a customizable prompt that considers context.</li>
+                                <li>AI also suggests common religious doubts for users to explore.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Verification System:</strong>
+                            <ul>
+                                <li>A true/false religious data verifier to check the authenticity of religious claims.</li>
+                                <li>Helps reduce misinformation and hate by providing original teachings.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Religious Storytelling AI:</strong>
+                            <ul>
+                                <li>AI generates parable-based religious stories based on moral situations.</li>
+                                <li>Users can input real-life scenarios, and AI will craft wisdom-filled narratives from different religious perspectives.</li>
+                                <li>Encourages engagement and learning through storytelling rather than direct explanation.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3>Our Team</h3>
+                    <p>ManUS is brought to you by a team of dedicated individuals passionate about technology and interfaith dialogue.
+                    </p>
+                    <ul>
+                        <li><strong>Sabir Ali Mondal:</strong> Developer</li>
+                        <li><strong>Afsan Rahaman:</strong> Design and Review</li>
+                    </ul>
+                    <p><i>"The more you know, the quieter you become."</i></p>
+                </section>
+
+
+                <!-- Settings Section -->
+                <section id="settings" class="content-section" style="display: none;">
+                    <h2>Settings</h2>
+                    <p>Placeholder for future settings options.</p>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <!-- Brand Bar -->
+    <div class="brand-bar">
+        <div class="leaf"></div>
+        <div class="leaf"></div>
+        <h1 class="brand-bar-name">Man-Us</h1>
+    </div>
+
+    <!-- Floating Menu Trigger -->
+    <div class="floating-menu-trigger" id="floatingMenuTrigger">
+        <img src="https://png.pngtree.com/png-vector/20231202/ourmid/pngtree-customer-icon-isolated-personality-png-image_10852443.png" alt="Menu" style="border-radius: 50%; width: 50px; height: 50px;">
+    </div>
+
+    <!-- Floating Menu -->
+    <div class="floating-menu" id="floatingMenu">
+        <ul>
+            <li onclick="showSection('profile');"><i class="fas fa-user"></i> Profile</li>
+            <li onclick="showSection('settings');"><i class="fas fa-cog"></i> Settings</li>
+            <li onclick="showSection('about');"><i class="fas fa-info-circle"></i> About</li>
+        </ul>
+    </div>
+
+    <script>
+        const discussionContent = document.getElementById("discussion-content");
+        const doubtContent = document.getElementById("doubt-content");
+        const verifyContent = document.getElementById("verify-content");
+        const storyContent = document.getElementById("story-content");
+
+        document.addEventListener("DOMContentLoaded", function() {
+            showSection(localStorage.getItem("activeSection") || "discussion");
+            fetchDiscussion(); // Auto-loads discussion once a day
+        });
+
+        function showSection(sectionId) {
+            document.querySelectorAll(".content-section").forEach(section => section.style.display = "none");
+            document.querySelectorAll(".nav-link").forEach(link => link.classList.remove("active")); // Remove active class from all links
+            document.getElementById(sectionId).style.display = "block";
+            localStorage.setItem("activeSection", sectionId);
+        }
+
+        async function fetchDiscussion() {
+            startLoading(discussionContent);
+            try {
+                const response = await fetch('/api/discussion', {
+                    method: 'POST'
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+
+                const data = await response.json();
+                displayDiscussion(data.response);
+            } catch (error) {
+                displayError(discussionContent, "Failed to load discussion. Please try again.");
+                console.error("Error fetching discussion:", error);
+            } finally {
+                stopLoading(discussionContent);
+            }
+        }
+
+        function displayDiscussion(text) {
+            const parts = text.split("...");
+            const colors = ["#A8E6CE", "#4D8F77", "#76C7C0", "#666666"];
+            let chatHTML = "";
+
+            parts.forEach((part, index) => {
+                chatHTML += `<div style="background: ${colors[index % 4]}; padding: 10px; margin: 5px 0; border-radius: 10px; color: white;">
+                                <strong>Friend ${index + 1}: ${part}
+                             `;
+            });
+
+            discussionContent.innerHTML = chatHTML;
+        }
+
+        async function askDoubt() {
+            const doubt = document.getElementById("doubtInput").value;
+            if (!doubt) return;
+
+            startLoading(doubtContent);
+            try {
+                const response = await fetch('/api/doubt', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        doubt
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+
+                const data = await response.json();
+                doubtContent.innerHTML = `<p>${data.response}`;
+            } catch (error) {
+                displayError(doubtContent, "Failed to get an answer for your doubt. Please try again.");
+                console.error("Error asking doubt:", error);
+            } finally {
+                stopLoading(doubtContent);
+            }
+        }
+
+        async function verifyClaim() {
+            const claim = document.getElementById("verifyInput").value;
+            if (!claim) return;
+
+            startLoading(verifyContent);
+            try {
+                const response = await fetch('/api/verify', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        claim
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+
+                const data = await response.json();
+                verifyContent.innerHTML = `<p>${data.response}`;
+            } catch (error) {
+                displayError(verifyContent, "Failed to verify claim. Please try again.");
+                console.error("Error verifying claim:", error);
+            } finally {
+                stopLoading(verifyContent);
+            }
+        }
+
+        async function generateStory() {
+            startLoading(storyContent);
+            try {
+                const response = await fetch('/api/story', {
+                    method: 'POST'
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+
+                const data = await response.json();
+                storyContent.innerHTML = `<p><i>${data.response}`;
+            } catch (error) {
+                displayError(storyContent, "Failed to generate the story. Please try again.");
+                console.error("Error generating story:", error);
+            } finally {
+                stopLoading(storyContent);
+            }
+        }
+
+        function startLoading(element) {
+            element.innerHTML = `<div class="loader-container"><div class="loader">`;
+        }
+
+        function stopLoading(element) {
+            // element.innerHTML = ""; // Clear the loader; the content will replace it.  Don't clear for the discussionContent
+        }
+
+        function displayError(element, message) {
+            element.innerHTML = `<div class="alert alert-danger" role="alert">${message}`;
+        }
+
+        // Floating Menu Functions (Revised)
+        document.addEventListener('DOMContentLoaded', function() {
+            const floatingMenuTrigger = document.getElementById('floatingMenuTrigger');
+            const floatingMenu = document.getElementById('floatingMenu');
+
+            floatingMenuTrigger.addEventListener('click', function(event) {
+                event.stopPropagation(); // Prevent click from closing immediately
+                floatingMenu.classList.toggle('show');
+            });
+
+            // Close the menu when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!floatingMenu.contains(event.target) && !floatingMenuTrigger.contains(event.target)) {
+                    floatingMenu.classList.remove('show');
+                }
+            });
+
+        });
+    </script> <!-- <script src="js/.-7394-index.js"></script> -->
+</body>
+
+</html>
