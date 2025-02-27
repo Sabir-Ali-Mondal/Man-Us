@@ -3,6 +3,8 @@
 ## Overview
 **Machine Making Humanity in Human**
 
+> **"The more you know, the quieter you become."**
+
 ## Objectives
 ### Religious Teaching
 - **Respect, Helping, Morality, Self-Control, Love for all.**
@@ -61,8 +63,11 @@
 |------|-----------|
 | **Feb 17, 2025** | Idea and discussion started. Planned development. |
 | **Feb 23, 2025** | Prompting and designing started. |
+| Feb 25-26, 2025 | Code Trial Started | Backend and frontend integration testing | Working prototype |
 | **Feb 27, 2025** | All functions and plans completed. Best version achieved. |
 
 ---
 **Man-Us: Building Bridges Through Understanding**
 
+
+> **"The more you know, the quieter you become."**
