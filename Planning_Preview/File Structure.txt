@@ -1,15 +1,29 @@
-full_stack_religious_app/
-├── public/
-│   ├── css/style.css
-│   ├── js/script.js
-│   ├── index.html
-├── views/
-│   ├── layout.ejs
-│   ├── home.ejs
+full_stack_ManUs/
 ├── database/
 │   ├── content.sql
+│   ├── users.db
 │   ├── users.sql
-├── server.js
+├── node_modules/
+├── public/
+│   ├── css/
+│   │   ├── style.css
+│   ├── js/
+│   │   ├── script.js
+│   ├── index.html
+│   ├── login.html
+│   ├── signup.html
+├── views/
+│   ├── changePassword.ejs
+│   ├── claims.ejs
+│   ├── doubts.ejs
+│   ├── home.ejs
+│   ├── layout.ejs
+│   ├── profile.ejs
+│   ├── sidebar.ejs
 ├── .env
+├── .gitignore
+├── package-lock.json
+├── package.json
+├── README.md
+├── server.js
 ├── vercel.json
-└── README.md
