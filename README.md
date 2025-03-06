@@ -1,5 +1,5 @@
 # Project: Man-Us
-Visit: https://manus1.ccbp.tech/
+Visit: https://manus1.ccbp.tech/ (only static uiux)
 ## Overview
 **Machine Making Humanity in Human**
 
