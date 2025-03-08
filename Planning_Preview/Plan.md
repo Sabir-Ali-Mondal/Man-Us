@@ -66,6 +66,8 @@
 | Feb 25-26, 2025 | Code Trial Started | Backend and frontend integration testing | Working prototype |
 | **Feb 27, 2025** | All functions and plans completed. Best version achieved. |
 | Mar 5,2025 | Fixed some Uiux and Look |
+| **Mar 8,2025** | Added Some advance features |
+
 ---
 **Man-Us: Building Bridges Through Understanding**
 
