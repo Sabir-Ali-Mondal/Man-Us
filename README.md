@@ -67,6 +67,7 @@ Visit: https://manus1.ccbp.tech/ (only static uiux)
 | **Feb 27, 2025** | All functions and plans completed. Best version achieved. |
 | Mar 5,2025 | Fixed some Uiux and Look |
 | **Mar 8,2025** | Added Some advance features |
+| Mar 10,2025 | AI response in marked format allowed |
 ---
 **Man-Us: Building Bridges Through Understanding**
 
