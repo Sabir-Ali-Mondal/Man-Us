@@ -68,6 +68,7 @@ Visit: https://manus1.ccbp.tech/ (only static uiux)
 | Mar 5,2025 | Fixed some Uiux and Look |
 | **Mar 8,2025** | Added Some advance features |
 | Mar 10,2025 | AI response in marked format allowed |
+| **Mar 17,2025** | Language System Added |
 ---
 **Man-Us: Building Bridges Through Understanding**
 
